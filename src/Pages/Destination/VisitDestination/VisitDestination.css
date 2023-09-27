@@ -1,0 +1,24 @@
+figure{
+    
+    overflow: hidden;
+    margin: 0 10px;
+}
+
+.image img{
+    display: block;
+    cursor: pointer;
+    
+}
+
+.image #zoom-In img {
+    transform: scale(1);
+    transition: 2s ease-in-out; 
+    /* filter: grayscale(50%); */
+}
+
+.image #zoom-In:hover img {
+    transform: scale(1.5);
+    transition: 2s ease-in-out;
+    filter: grayscale(0);
+    
+}
