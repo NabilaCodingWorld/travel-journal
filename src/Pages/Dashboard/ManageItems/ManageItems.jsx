@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useDestination from '../../../hooks/useDestination';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { FaTrashAlt } from 'react-icons/fa';
@@ -10,7 +10,15 @@ const ManageItems = () => {
 
     const [axiosSecure] = useAxiosSecure();
 
-    const handleDelete = (item) => {
+    const [isPending, setIsPending] = useState(true);
+
+  const toggleStatus = () => {
+    setIsPending(!isPending);
+  };
+
+
+    
+    const handleDelete = item => {
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -21,31 +29,37 @@ const ManageItems = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
+
                 axiosSecure.delete(`/destination/${item._id}`)
-                    .then((res) => {
+                    .then(res => {
                         console.log('deleted res', res.data);
                         if (res.data.deletedCount > 0) {
-                            refetch(); // Trigger a refetch on successful delete
-                            Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+                            refetch();
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
                         }
                     })
-                    .catch((error) => {
-                        console.error('Delete error', error);
-                        Swal.fire('Error', 'Failed to delete the item.', 'error');
-                    });
+
             }
-        });
-    };
-
-
-   
+        })
+    }
 
     return (
         <div>
+
+
+<h2>Item Status: {isPending ? 'Pending' : 'Approved'}</h2>
+      <button onClick={toggleStatus}>
+        {isPending ? 'Approve' : 'Pending'}
+      </button>
+
             <div className="w-full">
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
-                    {/* head */}
+                    
                     <thead>
                         <tr>
                             <th>#</th>
@@ -66,7 +80,7 @@ const ManageItems = () => {
                                     <div className="flex items-center space-x-3">
                                         <div className="avatar">
                                             <div className="mask mask-squircle w-12 h-12">
-                                                <img src={item.image} alt="Avatar Tailwind CSS Component" />
+                                                <img src={item.image1} alt="Avatar Tailwind CSS Component" />
                                             </div>
                                         </div>
                                         <div>

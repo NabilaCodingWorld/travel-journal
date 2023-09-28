@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 
 const VisitDestination = ({ place }) => {
 
-    const { name, description, image, category, cost, seat, date,  _id } = place;
+    const { name, description, image1, category, cost, seat, date,  _id } = place;
 
     const { user } = useContext(AuthContext);
 
@@ -44,7 +44,7 @@ const VisitDestination = ({ place }) => {
 
         const addTourItem = {
             toutCartItem: _id,
-            image,
+            image1,
             name,
             seat,
             cost,
@@ -105,7 +105,7 @@ const VisitDestination = ({ place }) => {
                 <div className='image'>
                     <div id="zoom-In">
                         <figure>
-                            <img className='md:w-full w-80' src={image} alt="" />
+                            <img className='md:w-full w-80' src={image1} alt="" />
                         </figure>
                     </div>
                 </div>

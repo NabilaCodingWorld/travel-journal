@@ -4,7 +4,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 
 const Photo = ({ destination }) => {
-    const { image, name, category, date } = destination;
+    const { image1, name, category, date } = destination;
     const [hovered, setHovered] = useState(false);
 
     const handleMouseEnter = () => {
@@ -31,7 +31,7 @@ const Photo = ({ destination }) => {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
-                <img   className="image" src={image} alt="" />
+                <img   className="image" src={image1} alt="" />
                 {hovered && (
                     <div data-aos="fade-right" data-aos-offset="200" data-aos-duration="2000"  className="overlay">
                         <p className="overlay-text">{name} , <span>{category}</span>
