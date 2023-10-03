@@ -58,7 +58,7 @@ const VisitDestination = ({ place }) => {
 
         console.log(place);
         if (user) {
-            fetch('http://localhost:5000/carts', {
+            fetch('https://poetry-of-introversion-server.vercel.app/carts', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

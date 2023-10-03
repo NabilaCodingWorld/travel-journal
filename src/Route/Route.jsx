@@ -50,7 +50,7 @@ import ManageItems from "../Pages/Dashboard/ManageItems/ManageItems";
         {
           path: "/destination/:_id",
           element: <PrivateRoute><DestinationDetails></DestinationDetails></PrivateRoute>,
-          loader: ({params}) => fetch(`http://localhost:5000/destination/${params._id}`)
+          loader: ({params}) => fetch(`https://poetry-of-introversion-server.vercel.app/destination/${params._id}`)
       },
       ]
     },

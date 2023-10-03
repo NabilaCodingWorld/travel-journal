@@ -6,7 +6,7 @@ const RegisteredPeople = () => {
     const [peoples, setPeoples] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/carts')
+        fetch('https://poetry-of-introversion-server.vercel.app/carts')
             .then(res => res.json())
             .then(data => setPeoples(data))
     }, [])

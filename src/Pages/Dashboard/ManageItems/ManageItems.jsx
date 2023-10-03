@@ -10,11 +10,11 @@ const ManageItems = () => {
 
     const [axiosSecure] = useAxiosSecure();
 
-    const [isPending, setIsPending] = useState(true);
+//     const [isPending, setIsPending] = useState(true);
 
-  const toggleStatus = () => {
-    setIsPending(!isPending);
-  };
+//   const toggleStatus = () => {
+//     setIsPending(!isPending);
+//   };
 
 
     
@@ -51,10 +51,10 @@ const ManageItems = () => {
         <div>
 
 
-<h2>Item Status: {isPending ? 'Pending' : 'Approved'}</h2>
+{/* <h2>Item Status: {isPending ? 'Pending' : 'Approved'}</h2>
       <button onClick={toggleStatus}>
         {isPending ? 'Approve' : 'Pending'}
-      </button>
+      </button> */}
 
             <div className="w-full">
             <div className="overflow-x-auto w-full">

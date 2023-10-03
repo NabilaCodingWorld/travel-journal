@@ -36,7 +36,7 @@ const SignUp = () => {
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
                         const saveUser = { name: data.name, email: data.email }
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://poetry-of-introversion-server.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
@@ -184,7 +184,7 @@ const SignUp = () => {
 
                             {/* <SocialLogin></SocialLogin> */}
 
-                            <h1 className='text-center my-5 font-bold pb-5 text-white'>If you have account already? So <Link className='text-blue-500' to='/login'>Log In</Link> </h1>
+                            <h1 className='text-center my-5 font-bold pb-5 text-white'>If you have account already? So <Link to="/login" >Log In</Link> </h1>
 
                         </div>
                     </div>

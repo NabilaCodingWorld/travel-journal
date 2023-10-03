@@ -5,7 +5,7 @@ const useDestination = () => {
     const {data:destinations = [], isLoading: loading, refetch} = useQuery({
         queryKey: ['destinations'],
         queryFn: async() => {
-            const res = await fetch('http://localhost:5000/destination');
+            const res = await fetch('https://poetry-of-introversion-server.vercel.app/destination');
             return res.json();
         }
     })

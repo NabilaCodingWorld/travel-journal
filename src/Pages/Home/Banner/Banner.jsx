@@ -36,7 +36,6 @@ const Banner = () => {
                         <span style={{ fontFamily: 'Quicksand' }} className='md:text-xl text-white font-bold text-xl' ref={typedRef}></span>  <br /> <br />
                 <br />
 
-                        <Link to="/registered-people"><button className="btn btn-primary">Get Started</button></Link>
                     </div>
                 </div>
             </div>

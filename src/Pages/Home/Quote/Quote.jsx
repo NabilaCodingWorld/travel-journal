@@ -7,7 +7,7 @@ const Quote = () => {
     const [details, setDetails] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/quote')
+        fetch('https://poetry-of-introversion-server.vercel.app/quote')
         .then(res => res.json())
         .then(data => setDetails(data))
     }, [])

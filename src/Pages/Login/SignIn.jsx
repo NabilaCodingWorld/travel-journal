@@ -36,8 +36,8 @@ const SignIn = () => {
                     title: 'Your work has been saved',
                     showConfirmButton: false,
                     timer: 1500
-                  })
-                  navigate(from , {replace:true} )
+                })
+                navigate(from, { replace: true })
             })
     }
 
@@ -50,11 +50,11 @@ const SignIn = () => {
                     <h1 className="mb-5 text-5xl font-bold">Log In</h1>
 
                     <div className='container md:ml-8 rounded-lg'>
-                        
+
                         <form onSubmit={handleLogin} className="max-w-xs mx-auto bg-slate-100 p-10 my-10 rounded-lg">
                             {/* email */}
                             <div className="mb-4">
-                                
+
                                 <input
                                     id="email"
                                     type="email"
