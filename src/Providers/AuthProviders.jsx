@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile} from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth';
 import { app } from '../firebase/firebase.config';
 import axios from 'axios';
 
@@ -7,7 +7,7 @@ export const AuthContext = createContext(null);
 
 const auth = getAuth(app);
 
-const AuthProviders = ({children}) => {
+const AuthProviders = ({ children }) => {
 
     const [user, setUser] = useState(null);
 
@@ -15,13 +15,13 @@ const AuthProviders = ({children}) => {
 
     // registration
 
-    const createUser = (email, password) =>{
+    const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     // logg in
-    const loggIn = (email, password)=>{
+    const loggIn = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
@@ -41,29 +41,29 @@ const AuthProviders = ({children}) => {
     }
 
 
-    useEffect(()=>{
-        const unsubscribe = onAuthStateChanged(auth, currentUser =>{
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser)
 
             setLoading(false);
 
             // get and set token
-            if(currentUser){
-                axios.post('https://poetry-of-introversion-server.vercel.app/jwt', {email: currentUser.email})
-                .then(data =>{
-                    console.log(data.data.token)
-                    localStorage.setItem('access-token', data.data.token)
-                    
-                })
+            if (currentUser) {
+                axios.post('https://travel-journal-server.vercel.app/jwt', { email: currentUser.email })
+                    .then(data => {
+                        console.log(data.data.token)
+                        localStorage.setItem('access-token', data.data.token)
+
+                    })
             }
 
-            else{
+            else {
                 localStorage.removeItem('access-token')
             }
 
-            
+
         })
-        return () =>{
+        return () => {
             unsubscribe();
         }
     }, [])

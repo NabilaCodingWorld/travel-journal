@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import './VisitDestination.css';
+// import './VisitDestination.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import moment from 'moment/moment';
 import { AuthContext } from '../../../Providers/AuthProviders';
@@ -58,7 +58,7 @@ const VisitDestination = ({ place }) => {
 
         console.log(place);
         if (user) {
-            fetch('https://poetry-of-introversion-server.vercel.app/carts', {
+            fetch('https://travel-journal-server.vercel.app/carts', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -100,12 +100,12 @@ const VisitDestination = ({ place }) => {
         <div className='md:mx-auto'>
             <div>
                 <p className='text-center mb-2'>
-                    <span className='text-gray-400 text-center'>  {formattedDateTime}</span>
+                    <span className='text-gray-500 text-center'>  {formattedDateTime}</span>
                 </p>
                 <div className='image'>
                     <div id="zoom-In">
                         <figure>
-                            <img className='md:w-full w-80' src={image1} alt="" />
+                            <img className='md:w-full h-80 w-80' src={image1} alt="" />
                         </figure>
                     </div>
                 </div>

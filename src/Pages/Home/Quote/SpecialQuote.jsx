@@ -17,27 +17,29 @@ const SpecialQuote = ({ detail }) => {
         setIsModalOpen(false);
     };
 
-    useEffect(() => {
-        Aos.init({
-            offset: 200,
-            easing: 'ease-in-sine',
-            duration: 600
-        });
-    }, []);
+    // useEffect(() => {
+    //     Aos.init({
+    //         offset: 200,
+    //         easing: 'ease-in-sine',
+    //         duration: 600
+    //     });
+    // }, []);
 
     return (
-        <div>
-            <div data-aos="fade-up" data-aos-offset="200" data-aos-duration="2000" className='p-5'>
-                <img src={img} alt="" /><br />
-                <h1 className='text-4xl mb-5'>{author}</h1>
-                <button className="btn btn-warning" onClick={openModal}>About Details</button>
+        <div className='hover:shadow-2xl hover:translate-y-2 duration-300'>
+            <div className='border-2 rounded-lg'>
+                <img className='w-full h-80 rounded-t-md' src={img} alt="" /><br />
+                <div className='p-5 text-center'>
+                    <h1 className='text-2xl mb-5 text-gray-600'>{author}</h1>
+                    <button className="btn btn-outline btn-warning btn-sm" onClick={openModal}>About Details</button>
+                </div>
             </div>
             {/* Modal */}
             <Modal
                 isOpen={isModalOpen}
                 onRequestClose={closeModal}
                 contentLabel="About Details Modal"
-                
+
 
                 style={{
                     overlay: {
@@ -56,7 +58,7 @@ const SpecialQuote = ({ detail }) => {
 
             >
                 <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onClick={closeModal}>✕</button>
-                
+
                 <h3 className="font-bold text-3xl">Hello, This is {author}</h3>
                 <p className="py-4 text-xl">{text}</p>
             </Modal>

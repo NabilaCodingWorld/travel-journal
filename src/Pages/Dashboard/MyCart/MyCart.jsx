@@ -21,7 +21,7 @@ const MyCart = () => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-              fetch(`https://poetry-of-introversion-server.vercel.app/carts/${row._id}`,{
+              fetch(`https://travel-journal-server.vercel.app/carts/${row._id}`,{
                     method: 'DELETE'
               })
 

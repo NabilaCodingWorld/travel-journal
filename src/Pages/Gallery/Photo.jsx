@@ -31,7 +31,7 @@ const Photo = ({ destination }) => {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
-                <img   className="image" src={image1} alt="" />
+                <img className="image w-96" src={image1} alt="" />
                 {hovered && (
                     <div data-aos="fade-right" data-aos-offset="200" data-aos-duration="2000"  className="overlay">
                         <p className="overlay-text">{name} , <span>{category}</span>

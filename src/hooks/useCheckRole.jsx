@@ -15,7 +15,7 @@ const  useCheckRole = () =>{
         queryKey: ['role', user?.email],
         enabled:!loading && !!user,
         queryFn: async () =>{
-            const res = await axios(`https://poetry-of-introversion-server.vercel.app/role/${user?.email}`)
+            const res = await axios(`https://travel-journal-server.vercel.app/role/${user?.email}`)
             console.log(res.data)
             return res.data
         }

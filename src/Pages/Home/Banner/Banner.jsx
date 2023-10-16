@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-import img from '../../../assets/old-rusty-fishing-boat-slope-along-shore-lake_181624-44902.avif'
+import img from '../../../assets/portrait-pretty-young-hipster-woman-having-fun-city-with-camera_1150-4602.jpg'
 
 import Typed from 'typed.js';
 import { Link } from 'react-router-dom';

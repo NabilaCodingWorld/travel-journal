@@ -32,10 +32,6 @@ const Navbar = () => {
 
         <Link to="/destination"><li><a className='hover:text-white'>Destination</a></li></Link>
 
-        <Link to="/gallery"><li><a className='hover:text-white'>Gallery</a></li></Link>
-
-        <li><a className='hover:text-white'>Travellers Review</a></li>
-
         <li><a className='hover:text-white'>Blog</a></li>
 
         {

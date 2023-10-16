@@ -5,7 +5,7 @@ import useAuth from './useAuth';
 
 
 const axiosSecure = axios.create({
-  baseURL: 'https://poetry-of-introversion-server.vercel.app/', 
+  baseURL: 'https://travel-journal-server.vercel.app/', 
 });
 
 const useAxiosSecure = () => {

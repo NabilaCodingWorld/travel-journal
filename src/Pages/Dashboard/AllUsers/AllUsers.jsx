@@ -16,7 +16,7 @@ const AllUsers = () => {
         })
 
         const handleMakeAdmin = user => {
-            fetch(`https://poetry-of-introversion-server.vercel.app/users/admin/${user._id}`,{
+            fetch(`https://travel-journal-server.vercel.app/users/admin/${user._id}`,{
                 method: 'PATCH'
             })
             .then(res => res.json())
@@ -49,7 +49,7 @@ const AllUsers = () => {
                 if (result.isConfirmed) {
                   
 
-                    fetch(`https://poetry-of-introversion-server.vercel.app/users/admin/${user._id}`,{
+                    fetch(`https://travel-journal-server.vercel.app/users/admin/${user._id}`,{
                         method: 'DELETE'
                     })
                     .then(res => res.json())

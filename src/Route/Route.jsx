@@ -16,6 +16,10 @@ import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import AdminRoute from "./AdminRoute";
 import AddItem from "../Pages/Dashboard/AddItem/AddItem";
 import ManageItems from "../Pages/Dashboard/ManageItems/ManageItems";
+import PopularDetails from "../Pages/Home/PopularDestination/PopularDetails";
+import VanueDetail from "../Pages/Home/BestVanue/VanueDetail";
+import Interested from "../Pages/Home/BestVanue/Interested";
+import ArticleDetail from "../Pages/Home/Article/ArticleDetail";
 
 
   export const router = createBrowserRouter([
@@ -44,13 +48,35 @@ import ManageItems from "../Pages/Dashboard/ManageItems/ManageItems";
             element: <SignUp></SignUp>
         },
         {
-            path: "/registered-people",
-            element: <RegisteredPeople></RegisteredPeople>
+            path: "/interested",
+            element: <PrivateRoute> <Interested></Interested> </PrivateRoute>
         },
+        // {
+        //     path: "/registered-people",
+        //     element: <RegisteredPeople></RegisteredPeople>
+        // },
         {
           path: "/destination/:_id",
           element: <PrivateRoute><DestinationDetails></DestinationDetails></PrivateRoute>,
-          loader: ({params}) => fetch(`https://poetry-of-introversion-server.vercel.app/destination/${params._id}`)
+          loader: ({params}) => fetch(`https://travel-journal-server.vercel.app/destination/${params._id}`)
+      },
+
+        {
+          path: "/popularDetails/:_id",
+          element: <PrivateRoute> <PopularDetails></PopularDetails> </PrivateRoute>,
+          loader: ({params}) => fetch(`https://travel-journal-server.vercel.app/popularDestination/${params._id}`)
+      },
+
+        {
+          path: "/vanueTour/:_id",
+          element: <PrivateRoute> <VanueDetail></VanueDetail> </PrivateRoute>,
+          loader: ({params}) => fetch(`https://travel-journal-server.vercel.app/vanue/${params._id}`)
+      },
+
+        {
+          path: "/article/:_id",
+          element: <PrivateRoute> <ArticleDetail></ArticleDetail> </PrivateRoute>,
+          loader: ({params}) => fetch(`https://travel-journal-server.vercel.app/article/${params._id}`)
       },
       ]
     },

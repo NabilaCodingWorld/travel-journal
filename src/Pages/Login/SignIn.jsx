@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
 import { FaEye, FaRegEye } from 'react-icons/fa';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const SignIn = () => {
@@ -9,6 +9,8 @@ const SignIn = () => {
     const { loggIn } = useContext(AuthContext);
 
     const navigate = useNavigate();
+
+    const location = useLocation();
 
     const from = location.state?.from?.pathname || '/';
 

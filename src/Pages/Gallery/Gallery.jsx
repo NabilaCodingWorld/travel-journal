@@ -6,7 +6,7 @@ import Pagination from '../Pagination/Pagination';
 const Gallery = () => {
 
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage, setPostsPerPage] = useState(9);
+    const [postsPerPage, setPostsPerPage] = useState(6);
 
     const [destinations, loading] = useDestination();
 
@@ -22,7 +22,14 @@ const Gallery = () => {
 
     return (
         <>
+
+            <div className='text-center  my-20'>
+                <p className='text-4xl mb-3 font-bold'>Gallery</p>
+                <p className='text-gray-600 text-xl'>Jobs fill your pocket, but adventures fill your soul.</p>
+            </div>
+
             <div className='grid md:grid-cols-3 gap-3 my-10 mx-5'>
+
                 {
                     currentPosts.map(destination => <Photo key={destination._id} destination={destination} />)
                 }
